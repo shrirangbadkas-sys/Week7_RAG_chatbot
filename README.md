@@ -107,6 +107,4 @@ Dr. D. Y. Patil Institute of Management and Research, Pune
 
 ---
 
-## License
 
-This project was developed for educational and learning purposes as part of the Week 7 RAG and Large Language Models assignment.
