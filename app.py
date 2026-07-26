@@ -19,14 +19,14 @@ api_key = os.getenv("GOOGLE_API_KEY")
 if not api_key:
     raise ValueError("GOOGLE_API_KEY not found in .env file")
 
-print("✅ API Loaded Successfully")
+print(" API Loaded Successfully")
 
 
 # Load PDF
 loader = PyPDFLoader("sample.pdf")
 documents = loader.load()
 
-print("✅ PDF Loaded")
+print("PDF Loaded")
 print(f"Total Pages : {len(documents)}")
 
 
@@ -48,7 +48,7 @@ embeddings = GoogleGenerativeAIEmbeddings(
     google_api_key=api_key
 )
 
-print("✅ Embedding Model Loaded")
+print(" Embedding Model Loaded")
 
 
 # Create FAISS Vector Store
@@ -58,7 +58,7 @@ vector_db = FAISS.from_documents(
     embeddings
 )
 
-print("✅ FAISS Vector Database Created")
+print(" FAISS Vector Database Created")
 
 
 # Load Gemini Chat Model
@@ -69,7 +69,7 @@ llm = ChatGoogleGenerativeAI(
     temperature=0.3
 )
 
-print("✅ Gemini Chat Model Loaded")
+print("Gemini Chat Model Loaded")
 
 
 # Chatbot
@@ -83,7 +83,7 @@ while True:
     question = input("\nAsk a Question (type 'exit' to quit): ")
 
     if question.lower() == "exit":
-        print("\n👋 Thank you for using the RAG Chatbot!")
+        print("\n Thank you for using the RAG Chatbot!")
         break
 
     # Retrieve similar chunks
@@ -163,5 +163,5 @@ Answer:
         print("=" * 45)
 
     except Exception as e:
-        print("\n❌ Error:")
+        print("\n Error:")
         print(e)
